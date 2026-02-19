@@ -22,7 +22,7 @@ export default function ActiveProgress() {
   return (
     <Box sx={{ my: 3 ,direction:"rtl"}} >
       <Typography>
-       المهام الغير مكتملة : {activeCount} / {state.maxActive}
+       المهام الغير منجزة  : {activeCount} / {state.maxActive}
       </Typography>
 
       <LinearProgress
