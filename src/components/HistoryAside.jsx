@@ -8,12 +8,11 @@ import {
   Typography,
   Box
 } from "@mui/material";
-
 export default function HistoryAside({ open, onClose }) {
   const { state } = useContext(TodoContext);
 
   return (
-    <Drawer anchor="right" open={open} onClose={onClose}>
+    <Drawer anchor="right" open={open} onClose={onClose} sx={{background: "#63000044" }}>
       <Box sx={{ width: 320, p: 2 }}>
         <Typography variant="h6" gutterBottom>
           History

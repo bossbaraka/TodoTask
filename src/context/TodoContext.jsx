@@ -14,6 +14,7 @@ const todoReducer = (state, action) => {
     case "ADD": {
       const activeCount = state.todos.filter((t) => !t.completed).length;
 
+       // user = 6 
       if (activeCount >= state.maxActive) {
         return state;
       }
@@ -23,6 +24,7 @@ const todoReducer = (state, action) => {
         title: action.payload,
         completed: false,
       };
+      
 
       return {
         ...state,
@@ -93,6 +95,13 @@ const todoReducer = (state, action) => {
         ],
       };
     }
+    case "removeAll":
+      return {
+        ...state,
+        todos: [],
+        history:[...state.history,{id:action.payload,action:"removed All item",time:new Date().toISOString()}]
+
+      }
     case "SET_FILTER":
       return {
         ...state,
